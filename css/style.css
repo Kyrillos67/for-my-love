@@ -1,0 +1,94 @@
+/* Smoother, gentler flip animation timing */
+.flip-inner {
+  transition-timing-function: cubic-bezier(0.4, 0.2, 0.2, 1);
+  will-change: transform;
+}
+
+/* Respect people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner {
+    transition: none !important;
+  }
+}
+
+/* smooth fade when the video section appears */
+#video-section {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Welcome Overlay animation */
+#welcome-overlay {
+  transition: opacity 0.5s ease;
+}
+
+/* ===================== */
+/* CUSTOM MAP PINS (كبّرنا الحجم عشان يغطي الأصل) */
+/* ===================== */
+.map-spot {
+  transform: translate(-50%, -20px); 
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.map-spot:hover {
+  transform: translate(-50%, -25px) scale(1.08);
+  z-index: 30;
+}
+
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  background-color: #E66479; 
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.pin-dot::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 12px;
+  background-color: #E66479;
+}
+
+.pin-box {
+  background: #FFFDF9;
+  border: 2px solid #DCD3C6;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 22px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-label {
+  color: #2E2622;
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 4px;
+  background: rgba(250, 243, 231, 0.95);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
