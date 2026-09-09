@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For You</title>
+  <title>For You My Baby</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,17 +37,30 @@
 <body class="bg-paper text-ink font-sans relative">
 
   <!-- ===================== -->
-  <!-- WELCOME ROMANTIC POPUP -->
+  <!-- WELCOME / SECRET ENTRY POPUP -->
   <!-- ===================== -->
   <div id="welcome-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
     <div class="bg-[#FFFDF9] border border-[#DCD3C6] rounded-2xl shadow-2xl max-w-md w-full p-8 text-center relative">
       <h3 class="font-display italic text-3xl text-ink mb-3">For My Love ❤️</h3>
       <p class="font-hand text-2xl text-ink/80 mb-6 leading-relaxed">
-        أغنيتنا المفضلة مستنياكي.. اضغطي هنا عشان نبدأ رحلة ذكرياتنا سوا.
+        Ready, my love? 🥰❤️
+        enter the name of our secret cafe✨. Don't show the pass for anyone. so we can start! 🚀😍
       </p>
+
+      <input
+        id="entry-input"
+        type="text"
+        placeholder="write hereee the pass"
+        class="w-full text-center border border-ink/20 rounded-full px-6 py-3 font-sans text-ink focus:outline-none focus:border-rose mb-4"
+      />
+
       <button id="enter-site-btn" class="bg-rose text-white px-8 py-3 rounded-full font-sans text-lg shadow-md hover:opacity-90 transition transform hover:scale-105 cursor-pointer">
-        اضغطي هنا يا عيوني ✨
+        Unlock
       </button>
+
+      <p id="entry-error" class="hidden font-hand text-xl text-rose mt-4">
+        The place with the old lady waitress ya boooty
+      </p>
     </div>
   </div>
 
@@ -59,7 +72,7 @@
       Little moments we've kept
     </h2>
     <p class="text-center text-ink/60 mb-16 max-w-md mx-auto">
-      Hover over a photo (or tap it, on your phone) to read the story behind it.
+      ✨click on each photo to read the story behind it.✨
     </p>
 
     <div class="flex flex-wrap justify-center gap-10 max-w-5xl mx-auto">
@@ -73,7 +86,9 @@
           </div>
           <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#FFFDF9] p-6 shadow-xl rounded-sm flex items-center justify-center">
             <p class="font-hand text-2xl text-ink text-center leading-snug">
-              The day we got caught in the rain and laughed the whole way home.
+This is where our outings started;
+ I wore a black jacket like a hacker😂, loving that unforgettable day❤️
+
             </p>
           </div>
         </div>
@@ -88,7 +103,7 @@
           </div>
           <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#FFFDF9] p-6 shadow-xl rounded-sm flex items-center justify-center">
             <p class="font-hand text-2xl text-ink text-center leading-snug">
-              Our first trip together. You fell asleep in the car before we even left the driveway.
+             This was the first flower I gave you in downtown❤️, not the sword one at Mousa Cafe😂😂.
             </p>
           </div>
         </div>
@@ -103,7 +118,7 @@
           </div>
           <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#FFFDF9] p-6 shadow-xl rounded-sm flex items-center justify-center">
             <p class="font-hand text-2xl text-ink text-center leading-snug">
-              Your face when you opened your present. I'll never forget it.
+             Here we were at Costa. Remember when I got you the bracelet with our date, and you,at the end of the day, walked away as usual?😡 this was just the beginning of you leaving me👀😂
             </p>
           </div>
         </div>
@@ -118,7 +133,7 @@
           </div>
           <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#FFFDF9] p-6 shadow-xl rounded-sm flex items-center justify-center">
             <p class="font-hand text-2xl text-ink text-center leading-snug">
-              Your face when you opened your present. I'll never forget it.
+              Here we made up🤝❤️. I gave you the bracelet, and we took a video of you acting surprised😂❤️.
             </p>
           </div>
         </div>
@@ -133,7 +148,7 @@
           </div>
           <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#FFFDF9] p-6 shadow-xl rounded-sm flex items-center justify-center">
             <p class="font-hand text-2xl text-ink text-center leading-snug">
-              Your face when you opened your present. I'll never forget it.
+              Here we celebrated 100 days together❤️, thinking we would live all our life. We ate at an Italian restaurant; you ate a little, and I finished the rest🫃🫃😂
             </p>
           </div>
         </div>
@@ -148,7 +163,7 @@
           </div>
           <div class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#FFFDF9] p-6 shadow-xl rounded-sm flex items-center justify-center">
             <p class="font-hand text-2xl text-ink text-center leading-snug">
-              Your face when you opened your present. I'll never forget it.
+              You might wonder why this day is special. I bought this phone just to take many pictures of you, and you really were my first photo❤️✨
             </p>
           </div>
         </div>
@@ -206,7 +221,7 @@
 <button onclick="openMemory('ziomarco')" class="absolute map-spot" style="top: 20%; left: 82%;">
   <div class="pin-dot"></div>
   <div class="pin-box">💼</div>
-  <span class="pin-label">Zio Marco</span>
+  <span class="pin-label">Spots</span>
 </button>
 
 <!-- 6. Rustic Cafe -->
@@ -220,7 +235,7 @@
 <button onclick="openMemory('somi')" class="absolute map-spot" style="top: 70%; left: 84%;">
   <div class="pin-dot"></div>
   <div class="pin-box">☕</div>
-  <span class="pin-label">Somi Cafe</span>
+  <span class="pin-label">Secret Cafe🤫</span>
 </button>
 
     </div>
@@ -252,7 +267,7 @@
     One more thing
   </h2>
   <p class="text-center text-ink/60 mb-10 max-w-md">
-    You know the date.
+    Brava...You know the date!
   </p>
 
   <!-- Password form -->
@@ -278,7 +293,15 @@
   <div id="video-section" class="hidden w-full max-w-2xl">
   <div class="rounded-lg shadow-xl bg-[#FFFDF9] p-8 md:p-12">
     <p class="font-hand text-2xl md:text-3xl text-ink leading-relaxed text-center whitespace-pre-line">
-      اكتبي هنا رسالتك الطويلة لعيد ميلادها...
+     "Happy birthday, ya botety, the person I have loved the most in my entire life❤️. You cannot imagine how much I love you, and how I am always trying my best to make you happy and keep you smiling✨.
+
+I know we have many disagreements, but through them, we get to know and understand each other better🫂. This is much better than each of us keeping our feelings bottled up inside without expressing them.
+
+As you know, I am traveling on the 20th. The hardest part of this for me is knowing that I will feel completely lonely without you there🤢.  Even though we do not meet every day here in Egypt, seeing you From time to time is enough for me. When I used to go on summer trips with my friends, I would feel lonely and spend all my time talking to you. Imagine how hard it will be when I travel and do not see you for months.
+
+I wish that you achieve everything you desire this year, and that this year at the institute goes perfectly for you.  You are almost there; next year you will take the maturity exam and finally be done. I hope to always see you successful🌟. As long as I am with you, I will always have your back, helping you achieve all your dreams and build a great career💪.
+
+I truly believe you will reach the highest places, just as I always wish for you. Happy birthday to my love, my sister, my best friend, and my everything❤️🌍 Habibiiiiiii!🥰"
     </p>
   </div>
 </div>
