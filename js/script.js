@@ -236,7 +236,7 @@ modal.addEventListener('click', (e) => {
 // ---------- PASSWORD + SURPRISE (also hashed now) ----------
 
 
-const CORRECT_DATE_HASH = 'd6d3e86f9934e709d0af99b505bb583434c498972bd4e1217f9925e5a3904169';
+const CORRECT_DATE_HASH = 'a7549ba3937018e1e7ae924da2ffa132e0c3ce9fbf789e81bf2edc3794f5d1d4';
 
 const passwordForm = document.getElementById('password-form');
 const passwordInput = document.getElementById('password-input');
