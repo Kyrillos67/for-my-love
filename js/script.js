@@ -1,4 +1,14 @@
 // ==========================================
+// HELPER: hash any text so it's never stored as plain text
+// ==========================================
+async function sha256(text) {
+  const data = new TextEncoder().encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// ==========================================
 // BACKGROUND MUSIC & SECRET ENTRY SETUP
 // ==========================================
 const bgMusic = document.getElementById('bg-music');
@@ -11,13 +21,18 @@ const entryError = document.getElementById('entry-error');
 bgMusic.volume = 0.2; 
 let isMusicPlaying = false;
 
-// الإجابات المقبولة (كلها هتتحول لحروف صغيرة ومن غير مسافات قبل المقارنة)
-const ACCEPTED_ENTRY_ANSWERS = ['somi', 'somicafe', 'somicaffe','سومي كافيه','سومي','somi cafe','somi caffe'];
+// دي مش الإجابات نفسها، دي "بصمة" (hash) لكل إجابة مقبولة
+const ACCEPTED_ENTRY_HASHES = [
+  '2e14f8ded6dbaeebe463f90cbf8fd10e05cd59d2f0d8cdcc0f1bc70e5e3f1c99', // somi
+  'c0a5c3a995dda9b399fc56447a377515e258098082ac9fa7336f0365f0de35f4', // somicafe
+  '5b60bd5f955fbd4e4bd729899067142e9d091d902dcbe142c754d935d2c172b9', // somicaffe
+];
 
-function checkEntry() {
+async function checkEntry() {
   const normalized = entryInput.value.trim().toLowerCase().replace(/[^a-z]/g, '');
+  const hashed = await sha256(normalized);
 
-  if (ACCEPTED_ENTRY_ANSWERS.includes(normalized)) {
+  if (ACCEPTED_ENTRY_HASHES.includes(hashed)) {
     entryError.classList.add('hidden');
 
     bgMusic.play().then(() => {
@@ -218,9 +233,10 @@ modal.addEventListener('click', (e) => {
   }
 });
 
-// ---------- PASSWORD + SURPRISE ----------
+// ---------- PASSWORD + SURPRISE (also hashed now) ----------
 
-const CORRECT_DATE_DIGITS = '2832025'; 
+// دي بصمة الباسورد "2832025" (28/3/2025)
+const CORRECT_DATE_HASH = 'd6d3e86f9934e709d0af99b505bb583434c498972bd4e1217f9925e5a390416';
 
 const passwordForm = document.getElementById('password-form');
 const passwordInput = document.getElementById('password-input');
@@ -228,10 +244,11 @@ const passwordSubmit = document.getElementById('password-submit');
 const passwordError = document.getElementById('password-error');
 const videoSection = document.getElementById('video-section');
 
-function checkPassword() {
+async function checkPassword() {
   const digitsOnly = passwordInput.value.replace(/\D/g, '');
+  const hashed = await sha256(digitsOnly);
 
-  if (digitsOnly === CORRECT_DATE_DIGITS) {
+  if (hashed === CORRECT_DATE_HASH) {
     passwordError.classList.add('hidden');
     passwordForm.classList.add('hidden');
     videoSection.classList.remove('hidden');
