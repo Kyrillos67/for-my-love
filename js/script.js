@@ -235,8 +235,8 @@ modal.addEventListener('click', (e) => {
 
 // ---------- PASSWORD + SURPRISE (also hashed now) ----------
 
-// دي بصمة الباسورد "2832025" (28/3/2025)
-const CORRECT_DATE_HASH = 'd6d3e86f9934e709d0af99b505bb583434c498972bd4e1217f9925e5a390416';
+
+const CORRECT_DATE_HASH = 'd6d3e86f9934e709d0af99b505bb583434c498972bd4e1217f9925e5a3904169';
 
 const passwordForm = document.getElementById('password-form');
 const passwordInput = document.getElementById('password-input');
