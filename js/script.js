@@ -23,9 +23,9 @@ let isMusicPlaying = false;
 
 // دي مش الإجابات نفسها، دي "بصمة" (hash) لكل إجابة مقبولة
 const ACCEPTED_ENTRY_HASHES = [
-  '2e14f8ded6dbaeebe463f90cbf8fd10e05cd59d2f0d8cdcc0f1bc70e5e3f1c99', // somi
-  'c0a5c3a995dda9b399fc56447a377515e258098082ac9fa7336f0365f0de35f4', // somicafe
-  '5b60bd5f955fbd4e4bd729899067142e9d091d902dcbe142c754d935d2c172b9', // somicaffe
+  '2e14f8ded6dbaeebe463f90cbf8fd10e05cd59d2f0d8cdcc0f1bc70e5e3f1c99',
+  'c0a5c3a995dda9b399fc56447a377515e258098082ac9fa7336f0365f0de35f4', 
+  '5b60bd5f955fbd4e4bd729899067142e9d091d902dcbe142c754d935d2c172b9', 
 ];
 
 async function checkEntry() {
